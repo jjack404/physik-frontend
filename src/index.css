@@ -1,0 +1,52 @@
+@import '@solana/wallet-adapter-react-ui/styles.css';
+
+/* Define the custom font */
+@font-face {
+  font-family: 'TheGoodMonolith';
+  src: url('./assets/fonts/TheGoodMonolith.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  font-family: 'TheGoodMonolith', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  background-color: #020919;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow: hidden; /* Hide overflow */
+}
+
+h1 {
+  font-size: 3em;
+  line-height: 1.1;
+}
+
+button {
+  background: #020919 !important;
+  color: #fffbbd !important;
+  font-family: 'TheGoodMonolith' !important;
+  border-radius: 0 !important;
+  padding: 4px !important;
+  cursor: pointer;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden; /* Hide overflow */
+}

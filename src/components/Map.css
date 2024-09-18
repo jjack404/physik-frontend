@@ -1,0 +1,34 @@
+
+.map-container {
+  position: relative;
+  height: calc(100dvh - 15px);
+}
+
+.map-container:focus {
+  outline: none !important;
+}
+
+.tooltip {
+  position: absolute;
+  background: #020919;
+  width: 80px;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: 0 0 10px #020919;
+  z-index: 1000;
+}
+
+.tooltip button {
+  background: #020919;
+  border: none;
+  margin: 0;
+  padding: 3px;
+  border-radius: 0;
+  width: auto;
+  cursor: pointer;
+}
+
+/* Add this CSS to remove the focus outline */
+.map-container:focus {
+  outline: none ;
+}

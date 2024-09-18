@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  height: 100%;
+  width: 100dvw;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  color: #fffbbd;
+}
+
+input:focus,
+textarea:focus,
+button:focus {
+  outline: none !important;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  overflow: hidden; /* Hide overflow */
+}
+
+.map-container {
+  overflow: hidden; /* Hide overflow */
+}

@@ -1,0 +1,143 @@
+.dashboard-container {
+    padding: 4px 8px;
+    border: 1px solid #fffbbd;
+    background-color: rgba(2, 9, 25, 0.85);
+    backdrop-filter: blur(25px);
+    color: #fffbbd;
+    border-radius: 0;
+    max-width: 375px;
+    max-height: 500px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    height: 66%;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #fffbbd;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.avatar-username-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.dashboard img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 10px auto;
+    display: block;
+}
+
+.username-edit-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.dashboard-username {
+    margin: 10px 0;
+    text-align: center;
+    font-size: 18px;
+}
+
+.dashboard-username-input {
+    width: 100%;
+    padding: 5px;
+    margin: 5px 0;
+    border: 1px solid #fffbbd;
+    border-radius: 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fffbbd;
+    font-family: 'TheGoodMonolith';
+    font-size: 18px;
+    text-align: center;
+}
+
+.edit-button, .save-button {
+    background-color: transparent;
+    border: .5px solid #fffbbd;
+    color: #fffbbd;
+    cursor: pointer;
+    font-size: 16px;
+    width: initial !important;
+    margin-left: 10px; /* Add margin to the left to separate from the input */
+}
+
+.dashboard p {
+    margin: 5px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+.dashboard h3 {
+    text-align: center;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.dashboard ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.dashboard ul li {
+    margin: 5px 0;
+    text-align: center;
+    font-size: 12px;
+}
+
+.dashboard input,
+.dashboard textarea {
+    width: 100%;
+    padding: 5px;
+    margin: 5px 0;
+    border: 1px solid #fffbbd;
+    border-radius: 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fffbbd;
+    font-family: 'TheGoodMonolith';
+}
+
+.dashboard button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #fffbbd;
+    border-radius: 0;
+    background-color: #020919;
+    color: #fffbbd;
+    cursor: pointer;
+    text-shadow: .5px 0px 0px #fffbbd;
+    font-family: 'TheGoodMonolith';
+}
+
+.dashboard button:hover {
+    background-color: #5bef6a;
+    color: #020919;
+    text-shadow: .5px 0px 0px #020919;
+}
+
+@media (min-width: 375px) {
+    .avatar-username-wrapper {
+        flex-direction: row;
+        justify-content: start;
+    }
+}
