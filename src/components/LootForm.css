@@ -143,6 +143,9 @@
   overflow-y: auto;
   gap: 4px;
   padding-bottom: 10px;
+  align-items: flex-start;
+  align-content: baseline;
+
 }
 
 /* Styles for fungible tokens */
