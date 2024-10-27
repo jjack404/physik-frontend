@@ -161,10 +161,10 @@ const mapStyles = [
     "elementType": "geometry",
     "stylers": [
       {
-        "color": "#fffbbd"
+        "color": "#020919"
       },
       {
-        "lightness": 36
+        "lightness": 66
       }
     ]
   },
@@ -197,6 +197,10 @@ const mapStyles = [
   }
 ];
 
+const isMobileDevice = () => {
+  return /Mobi|Android/i.test(navigator.userAgent);
+};
+
 const Map = () => {
   const { walletAddress } = useContext(WalletContext);
   const [markers, setMarkers] = useState([]);
@@ -220,15 +224,15 @@ const Map = () => {
   }, []);
 
   const handleMapClick = (event) => {
-    if (walletAddress) {
-      setFormPosition({ lat: event.latLng.lat(), lng: event.latLng.lng() });
-      setShowForm(true);
-      setTooltipPosition(null); // Hide tooltip when left-clicking
+    if (isMobileDevice() && walletAddress) {
+      setTooltipPosition({ lat: event.latLng.lat(), lng: event.latLng.lng() });
+    } else {
+      setTooltipPosition(null);
     }
   };
 
   const handleMapRightClick = (event) => {
-    if (walletAddress) {
+    if (!isMobileDevice() && walletAddress) {
       const map = mapRef.current;
       const scale = Math.pow(2, map.getZoom());
       const nw = new window.google.maps.LatLng(
@@ -243,6 +247,9 @@ const Map = () => {
       );
 
       setTooltipPosition({ x: pixelOffset.x, y: pixelOffset.y });
+      setFormPosition({ lat: event.latLng.lat(), lng: event.latLng.lng() });
+      setShowForm(true); // Show the form
+      setTooltipPosition(null); // Hide the tooltip
     }
   };
 
@@ -278,10 +285,8 @@ const Map = () => {
         onClick={handleMapClick}
         onRightClick={handleMapRightClick}
         onLoad={(map) => (mapRef.current = map)}
-        options={{ styles: mapStyles,
-          fullscreenControl: false
-         }} // Apply custom styles here
-        className="map-container" // Add this class
+        options={{ styles: mapStyles, fullscreenControl: false }}
+        className="map-container"
       >
         {markers.map((marker, index) => (
           <Marker
@@ -293,13 +298,6 @@ const Map = () => {
             }}
           />
         ))}
-        {showForm && (
-          <LootForm
-            position={formPosition}
-            onClose={handleCloseForm}
-            onSubmit={handleSubmitForm}
-          />
-        )}
         {tooltipPosition && (
           <div
             className="tooltip"
@@ -315,6 +313,13 @@ const Map = () => {
           >
             <button onClick={() => setShowForm(true)}>Add Loot</button>
           </div>
+        )}
+        {showForm && (
+          <LootForm
+            position={formPosition}
+            onClose={handleCloseForm}
+            onSubmit={handleSubmitForm}
+          />
         )}
       </GoogleMap>
     </LoadScript>

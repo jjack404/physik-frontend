@@ -4,10 +4,10 @@
     justify-content: space-between;
     align-items: center;
     max-width: 100%;
-    padding: 0 1rem; /* Adjust padding to ensure content is centered */
+    padding: 0 .5em; /* Adjust padding to ensure content is centered */
     background-color: transparent;
     color: white;
-    height: 60px; /* Set a fixed height */
+    height: 30px; /* Set a fixed height */
     box-sizing: border-box; /* Ensure padding is included in the height */
   }
   
@@ -22,7 +22,7 @@
 
   .logo h1 {
     display: flex;
-    font-size: 30px;
+    font-size: 20px;
     color: #fffbbd;
     margin: 0;
     padding: 0; 
@@ -42,6 +42,19 @@
     height: auto;
     border: none;
     cursor: pointer;
+  }
+
+  .dashboard-button svg {
+    height: 25.65px !important;
+    width: 25.65px !important;
+  }
+
+  .wallet-adapter-button-start-icon {
+    margin-right: 6px !important;
+  }
+  .wallet-adapter-button-start-icon img {
+    height: 20px !important;
+    width: 20px !important;
   }
 
   .bottom-bar {
@@ -65,4 +78,29 @@
     border-radius: 0 !important;
     padding: 0 8px !important;
     font-family: 'TheGoodMonolith' !important;
+  }
+
+  @media (min-width: 768px) {
+    .navbar {
+      height: 60px;
+      padding: 0 1em;
+    }
+
+    .logo h1 {
+      font-size: 30px;
+    }
+
+    .dashboard-button svg {
+      height: 38.47px !important;
+      width: 38.47px !important;
+    }
+
+    .wallet-adapter-button-start-icon {
+      margin-right: 12px !important;
+    }
+
+    .wallet-adapter-button-start-icon img {
+      height: 30px !important;
+      width: 30px !important;
+    }
   }

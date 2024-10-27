@@ -26,7 +26,7 @@ body {
   display: flex;
   flex-direction: column;
   min-width: 320px;
-  min-height: 100vh;
+  min-height: 100dvh;
   overflow: hidden; /* Hide overflow */
 }
 
@@ -47,6 +47,17 @@ button {
 #root {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100dvh;
   overflow: hidden; /* Hide overflow */
+}
+
+::-webkit-scrollbar {
+  background-color: transparent;
+  width: 6px !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #fffbbd;
+
+  border-radius: 5px;
 }

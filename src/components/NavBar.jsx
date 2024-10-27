@@ -8,7 +8,7 @@ const NavBar = ({ onProfileClick }) => {
 
   return (
     <nav className="navbar">
-      <div className="logo"><h1>PHYSIK</h1></div>
+      <div className="logo"><h1>PLONK</h1></div>
       <div className="walletButton">
         {walletAddress && (
           <button className="dashboard-button" onClick={onProfileClick}>
